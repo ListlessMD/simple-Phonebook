@@ -1,15 +1,16 @@
 This is a group project done by 6 people 
 the main purpose of this project is to make a phone book that inserts, sorts,displays,deletes,searches, and updates contacts
+every explanation per code is indicated by <--- besides repetitive code that has been explained prior
 
 Imports 
-1. Import java.swing.*; -is a development tool used for GUI creation.
-2. Import java.awt.*; - is used for creating user interfaces and painting graphics and 
+1. Import java.swing.*; <---is a development tool used for GUI creation.
+2. Import java.awt.*; <--- is used for creating user interfaces and painting graphics and 
 images.
 3. Import java.util.*; - provide functionality for commonly used cases which are usually
 encountered like scanners.
 
 Class 
-Phone book class - extends JFRAMES meaning its a type of window.
+Phone book class <--- extends JFRAMES meaning its a type of window.
  -Implements ActionListener, which allows the app to respond to button clicks.
 
 
@@ -21,44 +22,44 @@ or search queries.
 - Buttons: These trigger actions like adding, searching, displaying, deleting, updating, and 
 sorting contacts.
 
-Method actionPerformed(ActionEvent e)-( this line prettymuch means [ do an action { action is an event action}]
+Method actionPerformed(ActionEvent e) <---( this line prettymuch means [ do an action { action is an event action}]
 • This part of the code handles the logic of the buttons (till where it ends)
-- Add Contact button: Takes input , creates a new Contact, and adds it to the phoneBook.
-- Search Contact button: Searches for a contact by name.
-- Display All Contacts button: Show all the contacts in the list.
+<--- Add Contact button: Takes input , creates a new Contact, and adds it to the phoneBook.
+<--- Search Contact button: Searches for a contact by name.
+<--- Display All Contacts button: Show all the contacts in the list.
 - Delete Contact button: Removes a contact by name.
-- Update Contact button: Updates a contact's phone number.
-- Sort Contacts button: Sorts the phonebook alphabetically.
+<--- Update Contact button: Updates a contact's phone number.
+<--- Sort Contacts button: Sorts the phonebook alphabetically.
 
-- setTitle("Phone Book Application"); -To set a specified title/name of a window/JFrame 
+<--- setTitle("Phone Book Application"); -To set a specified title/name of a window/JFrame 
  setSize(800, 800); - To set the width followed by the high of said window/JFrame
- setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); - to set the defult closeoperation/x button/close window button to exit as its closed 
+ setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); <--- to set the defult closeoperation/x button/close window button to exit as its closed 
  setLayout(new BorderLayout());
  setLocationRelativeTo(null); - to make the window/JFrame be centerd as it pops up
- setResizable(false) - this makes it so the size of the window/JFrame cannot be alterd
+ setResizable(false) <--- this makes it so the size of the window/JFrame cannot be alterd
 
 // Add phone number input
- inputPanel.add(new JLabel("Phone Number:")); - lable on the JFrame/ preset text that is unchangeble
+ inputPanel.add(new JLabel("Phone Number:")); <--- lable on the JFrame/ preset text that is unchangeble
  phoneField = new JTextField();
  
  // Add buttons for contact actions
  addButton = new JButton("Add Contact");
- addButton.addActionListener(this); - It registers an event listener for the button (addButton), so that when the button is clicked, a specific action will be done
+ addButton.addActionListener(this); <--- It registers an event listener for the button (addButton), so that when the button is clicked, a specific action will be done
  inputPanel.add(addButton)
 
-  inputPanel.add(new JLabel("Search by Name:")); <- Adds a label to the panel with the text "Search by Name:" to guide the user.
+  inputPanel.add(new JLabel("Search by Name:")); <-- Adds a label to the panel with the text "Search by Name:" to guide the user.
  searchField = new JTextField(); <- Creates a text field (searchField) where the user can type the name they want to search for.
  inputPanel.add(searchField);< - Adds the text field to the panel.
  searchButton = new JButton("Search"); <- Creates a button labeled "Search".
  searchButton.addActionListener(this); 
- inputPanel.add(searchButton); -
+ inputPanel.add(searchButton); <---
 
  displayArea = new JTextArea();
- displayArea.setEditable(false); -Disables editing, making the text area read-only.
+ displayArea.setEditable(false); <---Disables editing, making the text area read-only.
  add(new JScrollPane(displayArea), BorderLayout.CENTER); -Adds the displayArea to the main GUI window, wrapped in a JScrollPane to enable scrolling. The BorderLayout.CENTER ensures that the text area occupies the central space of the window.
 
  // Add panels to the frame
- JPanel actionPanel = new JPanel(new GridLayout(1, 4)); -Creates a panel (actionPanel) with a 1-row, 4-column grid layout for arranging buttons.
+ JPanel actionPanel = new JPanel(new GridLayout(1, 4)); <---Creates a panel (actionPanel) with a 1-row, 4-column grid layout for arranging buttons.
  actionPanel.add(displayButton); 
  actionPanel.add(deleteButton); 
  actionPanel.add(updateButton);
